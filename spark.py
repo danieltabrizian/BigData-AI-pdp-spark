@@ -24,7 +24,7 @@ clean_df = clean_df.withColumn("APPEARANCES", col("APPEARANCES").cast(IntegerTyp
 sorted_df = clean_df.sort(col("APPEARANCES").desc())
 
 # Show the result
-sorted_df.show()
+sorted_df.select("name", "APPEARANCES").show(5)
 
 # Stop the Spark session
 spark.stop()
